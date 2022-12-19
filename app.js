@@ -180,7 +180,72 @@ drawButton.addEventListener("click", () => {
     }
 });
 
-// stop AUTO DRAWING , cleaing clearInterval
+// Stop AUTO DRAWING , cleaning clearInterval
 stopButton.addEventListener("click", () => {
     clearInterval(intervalId);
 });
+
+
+//Pixel art from an image
+function createPixelArt(image, canvas, gridSize) {
+    // Get the canvas context
+    const context = canvas.getContext("2d");
+
+    // Set the width and height of the canvas to match the image size
+    canvas.width = image.width;
+    canvas.height = image.height;
+
+    // Draw the image on the canvas
+    context.drawImage(image, 0, 0);
+
+    // Get the image data from the canvas
+    const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+
+    // Iterate over every pixel in the image data
+    for (let y = 0; y < imageData.height; y += gridSize) {
+        for (let x = 0; x < imageData.width; x += gridSize) {
+            // Get the pixel color at the current position
+            const pixelColor = getPixelColor(imageData, x, y);
+
+            // Draw a pixel with the pixel color at the current position
+            context.fillStyle = pixelColor;
+            context.fillRect(x, y, gridSize, gridSize);
+        }
+    }
+}
+
+
+// Get the pixels from the image
+function getPixelColor(imageData, x, y) {
+    // Calculate the index of the pixel in the image data array
+    const index = (x + y * imageData.width) * 4;
+
+    // Extract the red, green, blue, and alpha values from the image data
+    const r = imageData.data[index];
+    const g = imageData.data[index + 1];
+    const b = imageData.data[index + 2];
+    const a = imageData.data[index + 3];
+
+    // Return the pixel color as a string in the format "rgba(r, g, b, a)"
+    return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
+
+// When the user selects a file, set the value of the input element
+fileInput.onchange = function () {
+    // Get the selected files
+    let files = fileInput.files;
+
+    // Get the first file in the list
+    let file = files[0];
+
+    // Print the file name
+    console.log(file.name);
+    let objectURL = URL.createObjectURL(file);
+
+    const image = new Image();
+    image.src = objectURL;
+
+    image.onload = function () {
+        createPixelArt(image, canvas, 1);
+    };
+};
