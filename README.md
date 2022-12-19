@@ -5,7 +5,9 @@
 
 ## About Pixel Art Maker
 ```diff
-+NOTE: "This project was created as a way for me to learn and have fun. It is not the most effective method for creating a Pixel Art Maker because there are still bugs to fix and not everything functions as intended."
+
+-NOTE: This project was created as a way for me to learn and have fun. It is not the most effective method for creating a Pixel Art Maker because there are still bugs to fix and not everything functions as intended.
+
 ```
 The project begins by declaring several variables that reference HTML elements on the page, such as the canvas element, color picker elements, button elements, and more. It also declares a variable called "isDrawing" that is used to track whether the user is currently drawing on the canvas.
 
