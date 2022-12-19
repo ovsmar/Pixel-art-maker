@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    background-color: #eee;
+    justify-content: center;
+    width: 100%;
+}
+
+#color-BG,
+#color-picker {
+    width: 2em;
+    height: 2em;
+    border: none;
+    border-radius: 0.25em;
+    background-color: #ff0000;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+#random-color-button {
+    background: linear-gradient(to right, #bcbcbc 25%, #ffcd02 25%, #ffcd02 50%, #e84f47 50%, #e84f47 75%, #65c1ac 75%);
+}
+
+
+#myFileInput {
+    border: dotted;
+    cursor: pointer;
+}
+
+#quantityPixel {
+    width: 3em;
+    height: 2em;
+    border: none;
+    border-radius: 0.25em;
+
+}
+
+#stop-draw-button,
+#draw-button,
+#random-color-button,
+#save-button,
+#eraser-button,
+#clear-button {
+    margin-left: 0.5em;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.25em;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+#stop-draw-button:hover,
+#draw-button:hover,
+#random-color-button:hover,
+#save-button:hover,
+#eraser-button:hover,
+#clear-button:hover {
+    background-color: #ddd;
+}
+
+#canvas {
+    margin: 0.5em;
+    border: 1px solid #ccc;
+
+}

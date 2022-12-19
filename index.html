@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Pixel Art Maker</title>
+</head>
+
+<body>
+    <div class="toolbar">
+        <label for="color-picker">Color:</label>
+        <input type="color" id="color-picker" value="#000" />
+        <label for="color-BG">BG Color:</label>
+        <input type="color" id="color-BG" value="#ffffff" />
+        <button id="clear-button">Clear</button>
+        <button id="eraser-button">Eraser</button>
+        <button id="save-button">Save[BETA]</button>
+        <button id="random-color-button">Draw with random colors</button>
+        <button id="draw-button">Auto drawing ➔</button>
+        <label for="quantityPixel">Pixels:</label>
+        <input type="number" id="quantityPixel" name="quantityPixel" min="1" max="1000" />
+        <button id="stop-draw-button">Stop auto drawing</button>
+        <input type="file" id="myFileInput" style="display: none" />
+        <label id="myFileInput" for="myFileInput">Pixel art from an image</label>
+    </div>
+    <canvas id="canvas" width="1347" height="550"></canvas>
+    <script src="app.js"></script>
+</body>
+
+</html>
