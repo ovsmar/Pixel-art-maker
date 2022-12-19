@@ -4,7 +4,9 @@
 ![view](assets/ovsmar.png)
 
 ## About Pixel Art Maker
-
+```diff
++NOTE: "This project was created as a way for me to learn and have fun. It is not the most effective method for creating a Pixel Art Maker because there are still bugs to fix and not everything functions as intended."
+```
 The project begins by declaring several variables that reference HTML elements on the page, such as the canvas element, color picker elements, button elements, and more. It also declares a variable called "isDrawing" that is used to track whether the user is currently drawing on the canvas.
 
 The project includes a function called "drawGrid" that is used to draw a grid on the canvas to help the user align their drawings with a pixel grid. The function sets the stroke style and line width of the canvas context object, and then calculates the size of the grid cells based on a constant called "gridSize". It then iterates over the width and height of the canvas, drawing vertical and horizontal lines at intervals of "gridSize" pixels to create the grid.
