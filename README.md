@@ -1,5 +1,8 @@
 # Pixel Art Maker
 
+![view](assets/auto.png)
+![view](assets/ovsmar.png)
+
 ## About Pixel Art Maker
 
 The project begins by declaring several variables that reference HTML elements on the page, such as the canvas element, color picker elements, button elements, and more. It also declares a variable called "isDrawing" that is used to track whether the user is currently drawing on the canvas.
