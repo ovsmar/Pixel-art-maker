@@ -177,17 +177,19 @@ saveButton.addEventListener("click", () => {
 
 // Dreawing with random colors 
 randomColorButton.addEventListener("click", () => {
-    canvas.addEventListener("mousedown", (event) => {
+    canvas.addEventListener("mousedown" , (event) => {
         // Generate a random color
         const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
         // Set the fill style to the random color
         context.fillStyle = randomColor;
+        
 
         // Draw a pixel at the clicked position
         drawPixel(event.offsetX, event.offsetY);
     });
 });
+
 
 
 // AUTO DRAWING
