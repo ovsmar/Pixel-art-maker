@@ -295,6 +295,7 @@ fileInput.onchange = function () {
 let canvasDrawnOn = false;
 
 const form = document.getElementById("pixel-art-form");
+const colorLN = document.getElementById("color-picker-LN");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -305,6 +306,7 @@ form.addEventListener("submit", (event) => {
     }
 
     const input = document.getElementById("text-input").value;
+    context.fillStyle = colorLN.value;
     const fontSize = 100;
     const textWidth = context.measureText(input).width;
     const x = (canvas.width - textWidth) / 4;

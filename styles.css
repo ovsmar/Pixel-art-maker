@@ -31,13 +31,33 @@ body {
     width: 100%;
 }
 
-#color-BG,
-#color-picker {
-    width: 2em;
-    height: 2em;
-    border: none;
+
+#color-picker-LN{
+    width: 3em;
+    margin-top: 0.2em;
+    
+
+}
+
+#submitLN{
+    margin-top: 0.5em;
     border-radius: 0.25em;
-    background-color: #ff0000;
+    background-color: #eee;
+    cursor: pointer;
+    transform: translate(-7%, -19%);
+}
+
+
+#color-picker {
+    width: 3em;
+    cursor: pointer;
+    margin-left: 0.5em;
+    margin-right: 2em;
+}
+
+#color-BG {
+    width: 3em;
+    cursor: pointer;
     margin-left: 0.5em;
     margin-right: 0.5em;
 }
@@ -65,6 +85,7 @@ body {
     background-color: #eee;
     cursor: pointer;
     border-radius: 0.25em;
+    margin-top: 0.5em;
 }
 
 

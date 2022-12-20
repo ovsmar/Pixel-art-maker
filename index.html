@@ -25,13 +25,15 @@
         <button id="stop-draw-button">Stop auto drawing</button>
         <input type="file" id="myFileInput" style="display: none" />
         <label id="myFileInput" for="myFileInput">Pixel art from an image</label>
+
         <form id="pixel-art-form">
-            
             <input type="text" id="text-input" placeholder="Letters/numbers to pixel:">
-            <button type="submit">Draw</button>
-          </form>
+            <input type="color" id="color-picker-LN" value="#000" />
+            <button id="submitLN" type="submit">Draw</button>
+        </form>
+        
     </div>
-    <canvas id="canvas" width="1347" height="550"></canvas>
+    <canvas id="canvas" width="1347" height="530"></canvas>
     <script src="app.js"></script>
 </body>
 
