@@ -60,23 +60,23 @@ ghostImage.style.pointerEvents = "none";
 document.body.appendChild(ghostImage);
 
 canvas.addEventListener("mousemove", (event) => {
-  const x = Math.floor(event.offsetX / 10) * 10;
-  const y = Math.floor(event.offsetY / 10) * 10;
-    
-  ghostContext.fillStyle = colorPicker.value;
-  ghostContext.fillRect(0, 0, 10, 10);
+    const x = Math.floor(event.offsetX / 10) * 10;
+    const y = Math.floor(event.offsetY / 10) * 10;
 
-  ghostImage.src = ghostCanvas.toDataURL();
-  ghostImage.style.left = `${event.clientX+ -4}px`;
-  ghostImage.style.top = `${event.clientY + -4}px`;
+    ghostContext.fillStyle = colorPicker.value;
+    ghostContext.fillRect(0, 0, 10, 10);
+
+    ghostImage.src = ghostCanvas.toDataURL();
+    ghostImage.style.left = `${event.clientX + -4}px`;
+    ghostImage.style.top = `${event.clientY + -4}px`;
 });
 
 canvas.addEventListener("mousedown", (event) => {
-  const x = Math.floor(event.offsetX / 10) * 10;
-  const y = Math.floor(event.offsetY / 10) * 10;
+    const x = Math.floor(event.offsetX / 10) * 10;
+    const y = Math.floor(event.offsetY / 10) * 10;
 
-  context.fillStyle = colorPicker.value;
-  context.fillRect(x, y, 10, 10);
+    context.fillStyle = colorPicker.value;
+    context.fillRect(x, y, 10, 10);
 });
 
 
@@ -159,7 +159,7 @@ window.addEventListener("load", () => {
 //!save button works badly
 // Adds an event listener to a button element for clicks, allowing the user to save their drawing on a canvas as a PNG image file by downloading the image data.
 saveButton.addEventListener("click", () => {
-    
+
     // const image = document.createElement("img");
     // image.src = canvas.toDataURL("image/png");
 
@@ -177,13 +177,13 @@ saveButton.addEventListener("click", () => {
 
 // Dreawing with random colors 
 randomColorButton.addEventListener("click", () => {
-    canvas.addEventListener("mousedown" , (event) => {
+    canvas.addEventListener("mousedown", (event) => {
         // Generate a random color
         const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
         // Set the fill style to the random color
         context.fillStyle = randomColor;
-        
+
 
         // Draw a pixel at the clicked position
         drawPixel(event.offsetX, event.offsetY);
@@ -280,8 +280,6 @@ fileInput.onchange = function () {
     // Get the first file in the list
     let file = files[0];
 
-    // Print the file name
-    console.log(file.name);
     let objectURL = URL.createObjectURL(file);
 
     const image = new Image();
@@ -291,3 +289,31 @@ fileInput.onchange = function () {
         createPixelArt(image, canvas, 1);
     };
 };
+
+
+
+let canvasDrawnOn = false;
+
+const form = document.getElementById("pixel-art-form");
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (canvasDrawnOn) {
+        // Clear the canvas
+        context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    const input = document.getElementById("text-input").value;
+    const fontSize = 100;
+    const textWidth = context.measureText(input).width;
+    const x = (canvas.width - textWidth) / 4;
+    const y = (canvas.height - fontSize) / 4 + fontSize;
+    
+
+    context.font = `${fontSize}px BebasNeue-Regular`;
+    context.fillText(input, x, y);
+
+    canvasDrawnOn = true;
+});
+

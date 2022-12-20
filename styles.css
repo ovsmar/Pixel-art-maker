@@ -50,6 +50,7 @@ body {
 #myFileInput {
     border: dotted;
     cursor: pointer;
+    margin-right: 1em;
 }
 
 #quantityPixel {
@@ -59,6 +60,13 @@ body {
     border-radius: 0.25em;
 
 }
+
+#text-input{
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 0.25em;
+}
+
 
 #stop-draw-button,
 #draw-button,
