@@ -7,6 +7,10 @@
 
 ![view](assets/hell.png)
 
+### Cats 🐱...
+
+![view](assets/cat.png)
+
 ## About Pixel Art Maker
 
 !NOTE: This project was created as a way for me to learn and have fun. It is not the most effective method for creating a Pixel Art Maker because there are still bugs to fix and not everything functions as intended.
