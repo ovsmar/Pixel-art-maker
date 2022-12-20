@@ -291,7 +291,7 @@ fileInput.onchange = function () {
 };
 
 
-
+//"Letters/numbers to pixel
 let canvasDrawnOn = false;
 
 const form = document.getElementById("pixel-art-form");
