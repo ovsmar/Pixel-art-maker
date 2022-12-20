@@ -3,9 +3,9 @@
 
 ![view](assets/ovsmar.png)
 
-### The hell
+### The hell...
 
-![view](assets/auto.png)
+![view](assets/hell.png)
 
 ## About Pixel Art Maker
 ```diff
