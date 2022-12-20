@@ -1,11 +1,11 @@
 # Pixel Art Maker
 
-![view](assets/auto.png)
+
 ![view](assets/ovsmar.png)
 
 ### The hell
 
-![view](assets/hell.gif)
+![view](assets/auto.png)
 
 ## About Pixel Art Maker
 ```diff
