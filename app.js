@@ -47,7 +47,7 @@ function drawPixel(x, y) {
     context.fillRect(snappedX, snappedY, gridSize, gridSize);
 }
 
-// // The ghost of pixel cell
+// The ghost of pixel cell
 // const ghostCanvas = document.createElement("canvas");
 // ghostCanvas.width = 10;
 // ghostCanvas.height = 10;
@@ -341,3 +341,4 @@ form.addEventListener("submit", (event) => {
 
     canvasDrawnOn = true;
 });
+
