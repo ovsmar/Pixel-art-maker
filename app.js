@@ -300,18 +300,26 @@ const colorLN = document.getElementById("color-picker-LN");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    const input = document.getElementById("text-input").value;
+
+    // Check if the input value is empty
+    if (!input) {
+        alert("Please enter some text or numbers");
+        return;
+    }
+
     if (canvasDrawnOn) {
-        // Clear the canvas
+        // Clear the canvas if second click
         context.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    const input = document.getElementById("text-input").value;
+
     context.fillStyle = colorLN.value;
     const fontSize = 100;
     const textWidth = context.measureText(input).width;
     const x = (canvas.width - textWidth) / 4;
     const y = (canvas.height - fontSize) / 4 + fontSize;
-    
+
 
     context.font = `${fontSize}px BebasNeue-Regular`;
     context.fillText(input, x, y);
