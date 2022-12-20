@@ -183,15 +183,13 @@ randomColorButton.addEventListener("click", () => {
 
         // Set the fill style to the random color
         context.fillStyle = randomColor;
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 098108b... The hell
 
         // Draw a pixel at the clicked position
         drawPixel(event.offsetX, event.offsetY);
     });
 });
+
 
 
 // AUTO DRAWING
@@ -293,7 +291,7 @@ fileInput.onchange = function () {
 };
 
 
-//"Letters/numbers to pixel
+//Letters/numbers to pixel
 let canvasDrawnOn = false;
 
 const form = document.getElementById("pixel-art-form");
@@ -318,4 +316,3 @@ form.addEventListener("submit", (event) => {
 
     canvasDrawnOn = true;
 });
-
