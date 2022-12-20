@@ -47,6 +47,38 @@ function drawPixel(x, y) {
     context.fillRect(snappedX, snappedY, gridSize, gridSize);
 }
 
+// The ghost of pixel cell
+const ghostCanvas = document.createElement("canvas");
+ghostCanvas.width = 10;
+ghostCanvas.height = 10;
+const ghostContext = ghostCanvas.getContext("2d");
+
+const ghostImage = document.createElement("img");
+ghostImage.style.position = "absolute";
+ghostImage.style.zIndex = "10000";
+ghostImage.style.pointerEvents = "none";
+document.body.appendChild(ghostImage);
+
+canvas.addEventListener("mousemove", (event) => {
+  const x = Math.floor(event.offsetX / 10) * 10;
+  const y = Math.floor(event.offsetY / 10) * 10;
+    
+  ghostContext.fillStyle = colorPicker.value;
+  ghostContext.fillRect(0, 0, 10, 10);
+
+  ghostImage.src = ghostCanvas.toDataURL();
+  ghostImage.style.left = `${event.clientX+ -4}px`;
+  ghostImage.style.top = `${event.clientY + -4}px`;
+});
+
+canvas.addEventListener("mousedown", (event) => {
+  const x = Math.floor(event.offsetX / 10) * 10;
+  const y = Math.floor(event.offsetY / 10) * 10;
+
+  context.fillStyle = colorPicker.value;
+  context.fillRect(x, y, 10, 10);
+});
+
 
 // Adds an event listener to a canvas element for mouse clicks, enabling drawing on the canvas.
 canvas.addEventListener("mousedown", (event) => {
