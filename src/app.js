@@ -47,6 +47,7 @@ function drawPixel(x, y) {
     context.fillRect(snappedX, snappedY, gridSize, gridSize);
 }
 
+//! ghost of pixel doesn't work well
 // The ghost of pixel cell
 // const ghostCanvas = document.createElement("canvas");
 // ghostCanvas.width = 10;
