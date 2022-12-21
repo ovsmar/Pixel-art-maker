@@ -15,10 +15,10 @@
 
 !NOTE: This project was created as a way for me to learn and have fun. It is not the most effective method for creating a Pixel Art Maker because there are still bugs to fix and not everything functions as intended.
 
-```
-Pixel Art Maker est une application de dessin  qui permet de créer de l'art en pixels sur un canevas en utilisant divers outils et fonctionnalités. Ces outils incluent une grille pour aider à l'alignement, la possibilité de choisir des couleurs et de définir la couleur de fond, la possibilité de effacer le canevas, un outil gomme,  la possibilité de dessiner avec des couleurs aléatoires et une fonction de dessin automatique et de téléchargement. De plus, l'application permet de créer de l'art en pixels à partir d'une image en utilisant les méthodes "drawImage" et "getImageData" de l'objet de contexte de canevas pour manipuler les données de pixels de l'image et dessiner une version en pixels sur le canevas. Le projet est mis en œuvre à l'aide de JavaScript , HTML et CSS, avec des écouteurs d'événements ajoutés pour permettre l'interaction de l'utilisateur et les diverses fonctionnalités de l'application.
 
-```
+### Pixel Art Maker est une application de dessin  qui permet de créer de l'art en pixels sur un canevas en utilisant divers outils et fonctionnalités. Ces outils incluent une grille pour aider à l'alignement, la possibilité de choisir des couleurs et de définir la couleur de fond, la possibilité de effacer le canevas, un outil gomme,  la possibilité de dessiner avec des couleurs aléatoires et une fonction de dessin automatique et de téléchargement. De plus, l'application permet de créer de l'art en pixels à partir d'une image en utilisant les méthodes "drawImage" et "getImageData" de l'objet de contexte de canevas pour manipuler les données de pixels de l'image et dessiner une version en pixels sur le canevas. Le projet est mis en œuvre à l'aide de JavaScript , HTML et CSS, avec des écouteurs d'événements ajoutés pour permettre l'interaction de l'utilisateur et les diverses fonctionnalités de l'application.
+
+
 
 The project begins by declaring several variables that reference HTML elements on the page, such as the canvas element, color picker elements, button elements, and more. It also declares a variable called "isDrawing" that is used to track whether the user is currently drawing on the canvas.
 
