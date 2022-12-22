@@ -245,7 +245,7 @@ function draw() {
 let intervalId;
 drawButton.addEventListener("click", () => {
     if (strPixel.value.length == 0) {
-        alert("Pixel input is empty)");
+        alert("Pixel input is empty");
     } else {
         intervalId = setInterval(draw, 100);
     }
