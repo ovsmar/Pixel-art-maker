@@ -11,6 +11,8 @@ const stopButton = document.getElementById("stop-draw-button");
 const strPixel = document.getElementById("quantityPixel");
 let fileInput = document.getElementById("myFileInput");
 let isDrawing = false;
+let isRandomColorActive = true;
+
 
 // Function for drawing the grid cells on background
 function drawGrid() {
@@ -47,38 +49,47 @@ function drawPixel(x, y) {
     context.fillRect(snappedX, snappedY, gridSize, gridSize);
 }
 
-//! ghost of pixel doesn't work well
+
 // The ghost of pixel cell
-// const ghostCanvas = document.createElement("canvas");
-// ghostCanvas.width = 10;
-// ghostCanvas.height = 10;
-// const ghostContext = ghostCanvas.getContext("2d");
+const ghostCanvas = document.createElement("canvas");
+ghostCanvas.width = 10;
+ghostCanvas.height = 10;
+const ghostContext = ghostCanvas.getContext("2d");
 
-// const ghostImage = document.createElement("img");
-// ghostImage.style.position = "absolute";
-// ghostImage.style.zIndex = "10000";
-// ghostImage.style.pointerEvents = "none";
-// document.body.appendChild(ghostImage);
+const ghostImage = document.createElement("img");
+ghostImage.style.position = "absolute";
+ghostImage.style.zIndex = "10000";
+ghostImage.style.pointerEvents = "none";
+document.body.appendChild(ghostImage);
 
-// canvas.addEventListener("mousemove", (event) => {
-//     const x = Math.floor(event.offsetX / 10) * 10;
-//     const y = Math.floor(event.offsetY / 10) * 10;
+canvas.addEventListener("mousemove", (event) => {
+    const x = Math.floor(event.offsetX / 10) * 10;
+    const y = Math.floor(event.offsetY / 10) * 10;
 
-//     ghostContext.fillStyle = colorPicker.value;
-//     ghostContext.fillRect(0, 0, 10, 10);
+    if (isRandomColorActive) {
+        context.fillStyle = DrawRandomColors();
+    } else {
+        context.fillStyle = colorPicker.value;
+    }
 
-//     ghostImage.src = ghostCanvas.toDataURL();
-//     ghostImage.style.left = `${event.clientX + -4}px`;
-//     ghostImage.style.top = `${event.clientY + -4}px`;
-// });
+    ghostContext.fillStyle = "#cccccc";
+    ghostContext.fillRect(0, 0, 10, 10);
+    ghostImage.src = ghostCanvas.toDataURL();
+    ghostImage.style.left = `${event.clientX + -4}px`;
+    ghostImage.style.top = `${event.clientY + -4}px`;
+});
 
-// canvas.addEventListener("mousedown", (event) => {
-//     const x = Math.floor(event.offsetX / 10) * 10;
-//     const y = Math.floor(event.offsetY / 10) * 10;
+canvas.addEventListener("mousedown", (event) => {
+    const x = Math.floor(event.offsetX / 10) * 10;
+    const y = Math.floor(event.offsetY / 10) * 10;
 
-//     context.fillStyle = colorPicker.value;
-//     context.fillRect(x, y, 10, 10);
-// });
+    if (isRandomColorActive) {
+        context.fillStyle = DrawRandomColors();
+    } else {
+        context.fillStyle = colorPicker.value;
+    }
+    context.fillRect(x, y, 10, 10);
+});
 
 
 // Adds an event listener to a canvas element for mouse clicks, enabling drawing on the canvas.
@@ -184,31 +195,33 @@ function generateRandomColor() {
 
 // Draawing with random colors 
 // Flag to track whether the random color button is active
-let isRandomColorActive = true;
-
-// Update the value of the flag and the fill style of the canvas context when the button is clicked
-randomColorButton.addEventListener("click", () => {
-
-    if (isRandomColorActive) {
-        // Generate a random color
-        // const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-
-        // Set the fill style to the random color
-        context.fillStyle = generateRandomColor();
-
-    } else {
-        // Set the fill style to the current color picker value
-        context.fillStyle = colorPicker.value;
-    }
-});
-
-// Add a single event listener for the "mousedown" event
-canvas.addEventListener("mousedown", (event) => {
-    // Draw a pixel at the clicked position
-    drawPixel(event.offsetX, event.offsetY);
-});
+function DrawRandomColors() {
 
 
+    // Update the value of the flag and the fill style of the canvas context when the button is clicked
+    randomColorButton.addEventListener("click", () => {
+
+        if (isRandomColorActive) {
+            // Generate a random color
+            // const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
+            // Set the fill style to the random color
+            context.fillStyle = generateRandomColor();
+            return generateRandomColor()
+
+        } else {
+            // Set the fill style to the current color picker value
+            context.fillStyle = colorPicker.value;
+        }
+    });
+
+    // Add a single event listener for the "mousedown" event
+    canvas.addEventListener("mousedown", (event) => {
+        // Draw a pixel at the clicked position
+        drawPixel(event.offsetX, event.offsetY);
+    });
+
+}
 // AUTO DRAWING
 function draw() {
     // Generate a random color
