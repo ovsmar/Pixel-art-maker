@@ -1,8 +1,8 @@
 # Pixel Art Maker
 
-**Find me here**
+**DEMO**
 
-- [DEMO](https://ovsmar.github.io/Pixel-Art-Maker/)
+- [Pixel Art Maker](https://ovsmar.github.io/Pixel-Art-Maker/)
 
 ![view](assets/ovsmar.png)
 
