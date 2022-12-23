@@ -49,7 +49,7 @@ function drawPixel(x, y) {
     context.fillRect(snappedX, snappedY, gridSize, gridSize);
 }
 
-
+// !The ghost of pixel cell dont work when deploying
 // The ghost of pixel cell
 const ghostCanvas = document.createElement("canvas");
 ghostCanvas.width = 10;
