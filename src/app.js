@@ -13,9 +13,15 @@ let fileInput = document.getElementById("myFileInput");
 let isDrawing = false;
 let isRandomColorActive = true;
 
+// the canvas' current width/height.
+context.canvas.width = window.innerWidth;
+context.canvas.height = window.innerHeight;
+
+
 
 // Function for drawing the grid cells on background
 function drawGrid() {
+
     // Set the stroke style and line width
     context.strokeStyle = "#cccccc";
     context.lineWidth = 1;
@@ -39,6 +45,17 @@ function drawGrid() {
 }
 // call function
 drawGrid();
+
+// function for canvas auto-resize 
+function windowResize() {
+    const imageData = context.getImageData(0, 0, canvas.width, canvas.height);  // Store the image data
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context.putImageData(imageData, 0, 0);  // Restore the image data
+    drawGrid();  // Call the drawGrid function to redraw the grid on top of the image data
+};
+
+window.addEventListener('resize', windowResize)
 
 
 // function draws a pixel on a canvas at a specified x and y coordinate, with the pixel being snapped to a grid of a certain size.
@@ -149,11 +166,11 @@ let isErasing = false;
 
 eraserButton.addEventListener("click", () => {
     isErasing = !isErasing;
-    if (!isErasing){
+    if (!isErasing) {
         context.fillStyle = "#000";
-        eraserButton.style.backgroundColor ="red"
-    }else {
-        eraserButton.style.backgroundColor ="green"
+        eraserButton.style.backgroundColor = "red"
+    } else {
+        eraserButton.style.backgroundColor = "green"
     }
 });
 

@@ -7,11 +7,12 @@ body {
     padding: 0;
 }
 
-html,
-body {
-    height: 100vh;
-   
-}
+
+html, body {
+    width:  100%;
+    height: 100%;
+    margin: 0;
+  }
 
 body {
     margin: 0;
@@ -118,7 +119,7 @@ background-color: red ;
 }
 
 #canvas {
-    margin: 0.5em;
+   
     border: 1px solid #ccc;
 
 }
