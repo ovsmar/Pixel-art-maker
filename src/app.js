@@ -232,20 +232,28 @@ window.addEventListener("load", () => {
 //!save button works badly
 // Adds an event listener to a button element for clicks, allowing the user to save their drawing on a canvas as a PNG image file by downloading the image data.
 saveButton.addEventListener("click", () => {
-
-    // const image = document.createElement("img");
-    // image.src = canvas.toDataURL("image/png");
-
-    // window.open(
-    //     image.src.replace(/^data:image\/[^;]/, "data:application/octet-stream")
-    // );
-
-    const a = document.createElement("a");
-    a.href = canvas.toDataURL("image/png");
-    a.download = "pixel.png";
-
-    a.click();
-});
+    // Create a temporary canvas to draw the image on
+    const tempCanvas = document.createElement("canvas");
+    tempCanvas.width = canvas.width;
+    tempCanvas.height = canvas.height;
+    const tempContext = tempCanvas.getContext("2d");
+    const bgColorSAVE = localStorage.getItem("bgColor");
+    // Set the canvas background color with the background color from localStorage
+    tempContext.fillStyle = bgColorSAVE;
+    tempContext.fillRect(0, 0, canvas.width, canvas.height);
+  
+    // Draw the current canvas image onto the temporary canvas
+    tempContext.drawImage(canvas, 0, 0);
+  
+    // Create an a element to download the image
+    const link = document.createElement("a");
+    link.download = "pixel.png";  // Set the download attribute to the desired file name
+    link.href = tempCanvas.toDataURL("image/png");  // Set the href attribute to the image data
+    document.body.appendChild(link);  // Add the a element to the body
+    link.click();  // Click the a element to trigger the download
+    document.body.removeChild(link);  // Remove the a element from the body
+  });
+  
 
 // function for Generate a random color
 function generateRandomColor() {
