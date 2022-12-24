@@ -229,7 +229,7 @@ window.addEventListener("load", () => {
     }
 });
 
-//!save button works badly
+
 // Adds an event listener to a button element for clicks, allowing the user to save their drawing on a canvas as a PNG image file by downloading the image data.
 saveButton.addEventListener("click", () => {
     // Create a temporary canvas to draw the image on
