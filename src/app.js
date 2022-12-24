@@ -142,11 +142,53 @@ clearButton.addEventListener("click", () => {
     drawGrid();
 });
 
+/////////////
+
 // Adds event listeners to a button and a canvas element for clicks and mouse movement, enabling an eraser tool for the canvas and redrawing a grid on the canvas.
+let isErasing = false;
+
 eraserButton.addEventListener("click", () => {
-    context.fillStyle = "#ffffff";
-    console.log("ff")
+    isErasing = !isErasing;
+    if (!isErasing){
+        context.fillStyle = "#000";
+        eraserButton.style.backgroundColor ="red"
+    }
+    else {
+        eraserButton.style.backgroundColor ="green"
+    }
 });
+
+canvas.addEventListener("mousedown", (event) => {
+    if (isErasing) {
+        context.fillStyle = "transparent";
+        const x = Math.floor(event.offsetX / 10) * 10;
+        const y = Math.floor(event.offsetY / 10) * 10;
+
+        // Clear a 10x10 pixel area at the current mouse position
+        context.clearRect(x, y, 10, 10);
+    } else {
+        if (isRandomColorActive) {
+            context.fillStyle = DrawRandomColors();
+        } else {
+            context.fillStyle = colorPicker.value;
+        }
+        const x = Math.floor(event.offsetX / 10) * 10;
+        const y = Math.floor(event.offsetY / 10) * 10;
+        context.fillRect(x, y, 10, 10);
+    }
+});
+
+canvas.addEventListener("mousemove", (event) => {
+    if (isErasing) {
+        context.fillStyle = "transparent";
+        const x = Math.floor(event.offsetX / 10) * 10;
+        const y = Math.floor(event.offsetY / 10) * 10;
+
+        // Clear a 10x10 pixel area at the current mouse position
+        context.clearRect(x, y, 10, 10);
+    }
+});
+
 
 canvas.addEventListener("mousemove", (event) => {
     drawGrid();

@@ -10,6 +10,7 @@ body {
 html,
 body {
     height: 100vh;
+   
 }
 
 body {
@@ -104,11 +105,14 @@ body {
     cursor: pointer;
 }
 
+#eraser-button{
+background-color: red ;  
+}
+
 #stop-draw-button:hover,
 #draw-button:hover,
 #random-color-button:hover,
 #save-button:hover,
-#eraser-button:hover,
 #clear-button:hover {
     background-color: #ddd;
 }
