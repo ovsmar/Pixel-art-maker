@@ -87,9 +87,11 @@ canvas.addEventListener("mousemove", (event) => {
         context.fillStyle = DrawRandomColors();
     } else {
         context.fillStyle = colorPicker.value;
+        
     }
 
     ghostContext.fillStyle = "#cccccc";
+    
     ghostContext.fillRect(0, 0, 10, 10);
     ghostImage.src = ghostCanvas.toDataURL();
     ghostImage.style.left = `${event.clientX + -4}px`;
