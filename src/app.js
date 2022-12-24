@@ -43,7 +43,7 @@ function drawGrid() {
         context.stroke();
     }
 }
-// call function
+// call function drawGrid()
 drawGrid();
 
 // function for canvas auto-resize 
@@ -341,6 +341,7 @@ function createPixelArt(image, canvas, gridSize) {
             context.fillRect(x, y, gridSize, gridSize);
         }
     }
+    drawGrid();
 }
 
 
@@ -375,6 +376,7 @@ fileInput.onchange = function () {
     image.onload = function () {
         createPixelArt(image, canvas, 1);
     };
+    
 };
 
 
