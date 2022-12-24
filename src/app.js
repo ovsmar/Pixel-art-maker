@@ -142,8 +142,8 @@ clearButton.addEventListener("click", () => {
     drawGrid();
 });
 
-/////////////
 
+//EraserButton
 // Adds event listeners to a button and a canvas element for clicks and mouse movement, enabling an eraser tool for the canvas and redrawing a grid on the canvas.
 let isErasing = false;
 
@@ -152,8 +152,7 @@ eraserButton.addEventListener("click", () => {
     if (!isErasing){
         context.fillStyle = "#000";
         eraserButton.style.backgroundColor ="red"
-    }
-    else {
+    }else {
         eraserButton.style.backgroundColor ="green"
     }
 });
