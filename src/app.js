@@ -89,7 +89,7 @@ canvas.addEventListener("mousemove", (event) => {
         context.fillStyle = colorPicker.value;
         
     }
-
+// color of ghost pixel
     ghostContext.fillStyle = "#cccccc";
     
     ghostContext.fillRect(0, 0, 10, 10);
