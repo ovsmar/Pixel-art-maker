@@ -87,11 +87,11 @@ canvas.addEventListener("mousemove", (event) => {
         context.fillStyle = DrawRandomColors();
     } else {
         context.fillStyle = colorPicker.value;
-        
+
     }
-// color of ghost pixel
+    // color of ghost pixel
     ghostContext.fillStyle = "#cccccc";
-    
+
     ghostContext.fillRect(0, 0, 10, 10);
     ghostImage.src = ghostCanvas.toDataURL();
     ghostImage.style.left = `${event.clientX + -4}px`;
@@ -239,12 +239,17 @@ saveButton.addEventListener("click", () => {
     const tempContext = tempCanvas.getContext("2d");
     const bgColorSAVE = localStorage.getItem("bgColor");
     // Set the canvas background color with the background color from localStorage
-    tempContext.fillStyle = bgColorSAVE;
+
+    if (bgColorSAVE === null) {
+        tempContext.fillStyle = "#ffffff";
+    } else {
+        tempContext.fillStyle = bgColorSAVE;
+    }
     tempContext.fillRect(0, 0, canvas.width, canvas.height);
-  
+
     // Draw the current canvas image onto the temporary canvas
     tempContext.drawImage(canvas, 0, 0);
-  
+
     // Create an a element to download the image
     const link = document.createElement("a");
     link.download = "pixel.png";  // Set the download attribute to the desired file name
@@ -252,8 +257,8 @@ saveButton.addEventListener("click", () => {
     document.body.appendChild(link);  // Add the a element to the body
     link.click();  // Click the a element to trigger the download
     document.body.removeChild(link);  // Remove the a element from the body
-  });
-  
+});
+
 
 // function for Generate a random color
 function generateRandomColor() {
@@ -386,7 +391,7 @@ fileInput.onchange = function () {
     image.onload = function () {
         createPixelArt(image, canvas, 1);
     };
-    
+
 };
 
 
