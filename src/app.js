@@ -156,10 +156,13 @@ window.addEventListener("load", () => {
 
 // Adds an event listener to a button element for clicks, clearing the canvas, reloading the webpage, and redrawing a grid on the canvas.
 clearButton.addEventListener("click", () => {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    window.location.reload();
-    drawGrid();
+    if (confirm("Warning: Are you sure you want to clear the all pixels?")) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        window.location.reload();
+        drawGrid();
+    }
 });
+
 
 
 //EraserButton
