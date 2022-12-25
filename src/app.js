@@ -163,8 +163,6 @@ clearButton.addEventListener("click", () => {
     }
 });
 
-
-
 //EraserButton
 // Adds event listeners to a button and a canvas element for clicks and mouse movement, enabling an eraser tool for the canvas and redrawing a grid on the canvas.
 let isErasing = false;
@@ -433,4 +431,6 @@ form.addEventListener("submit", (event) => {
 
     canvasDrawnOn = true;
 });
+
+
 
