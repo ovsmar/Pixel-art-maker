@@ -436,3 +436,59 @@ form.addEventListener("submit", (event) => {
 
 
 
+
+
+// move the draw , dont works well
+let isMoving = false;  // flag to track if the move tool is active
+let startX, startY;  // variables to store the starting x and y coordinates of the move operation
+
+const moveButton = document.getElementById("move-button");  // select the move button
+
+// Add a click event listener to the move button
+moveButton.addEventListener("click", (event) => {
+  // Toggle the isMoving flag
+  isMoving = !isMoving;
+  if (isMoving) {
+    moveButton.innerText = "Stop Moving";  // update the button text
+  } else {
+    moveButton.innerText = "Move";  // update the button text
+  }
+});
+
+canvas.addEventListener("mousedown", (event) => {
+    if (context.getImageData(event.offsetX, event.offsetY, 1, 1).data[3] > 0) {  // check if the mouse is inside the drawing
+      isMoving = true;  // set the isMoving flag to true
+      startX = event.offsetX;
+      startY = event.offsetY;
+    } else {
+      isMoving = false;  // set the isMoving flag to false
+    }
+  });
+  
+
+canvas.addEventListener("mousemove", (event) => {
+  if (isMoving) {
+    // Calculate the distance moved since the last mousemove event
+    const dx = event.offsetX - startX;
+    const dy = event.offsetY - startY;
+    // Draw the image data on the canvas, shifted by the distance moved
+    context.putImageData(imageData, dx, dy);
+    
+  }
+});
+
+canvas.addEventListener("mouseup", (event) => {
+    isMoving = false;
+    // Update the starting coordinates to the current mouse position
+    startX = event.offsetX;
+    startY = event.offsetY;
+    // Store the image data for future use
+    imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+    
+  
+});
+
+
+
+
+
