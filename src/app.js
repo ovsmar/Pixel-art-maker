@@ -20,31 +20,31 @@ context.canvas.height = window.innerHeight;
 
 
 // Function for drawing the grid cells on background
-function drawGrid() {
+// function drawGrid() {
 
-    // Set the stroke style and line width
-    context.strokeStyle = "#cccccc";
-    context.lineWidth = 1;
+//     // Set the stroke style and line width
+//     context.strokeStyle = "#cccccc";
+//     context.lineWidth = 1;
 
-    // Calculate the size of the grid cells based on the pixel size
-    const gridSize = 10;
+//     // Calculate the size of the grid cells based on the pixel size
+//     const gridSize = 10;
 
-    // Iterate over the canvas width and height, drawing vertical and horizontal lines
-    for (let x = 0; x < canvas.width; x += gridSize) {
-        context.beginPath();
-        context.moveTo(x + 0.5, 0);
-        context.lineTo(x + 0.5, canvas.height);
-        context.stroke();
-    }
-    for (let y = 0; y < canvas.height; y += gridSize) {
-        context.beginPath();
-        context.moveTo(0, y + 0.5);
-        context.lineTo(canvas.width, y + 0.5);
-        context.stroke();
-    }
-}
-// call function drawGrid()
-drawGrid();
+//     // Iterate over the canvas width and height, drawing vertical and horizontal lines
+//     for (let x = 0; x < canvas.width; x += gridSize) {
+//         context.beginPath();
+//         context.moveTo(x + 0.5, 0);
+//         context.lineTo(x + 0.5, canvas.height);
+//         context.stroke();
+//     }
+//     for (let y = 0; y < canvas.height; y += gridSize) {
+//         context.beginPath();
+//         context.moveTo(0, y + 0.5);
+//         context.lineTo(canvas.width, y + 0.5);
+//         context.stroke();
+//     }
+// }
+// // call function drawGrid()
+// drawGrid();
 
 // function for canvas auto-resize 
 function windowResize() {
@@ -52,7 +52,7 @@ function windowResize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     context.putImageData(imageData, 0, 0);  // Restore the image data
-    drawGrid();  // Call the drawGrid function to redraw the grid on top of the image data
+    // drawGrid();  // Call the drawGrid function to redraw the grid on top of the image data
 };
 
 window.addEventListener('resize', windowResize)
@@ -159,7 +159,7 @@ clearButton.addEventListener("click", () => {
     if (confirm("Warning: Are you sure you want to clear the all pixels?")) {
         context.clearRect(0, 0, canvas.width, canvas.height);
         window.location.reload();
-        drawGrid();
+        // drawGrid();
     }
 });
 
@@ -209,9 +209,9 @@ canvas.addEventListener("mousemove", (event) => {
 });
 
 
-canvas.addEventListener("mousemove", (event) => {
-    drawGrid();
-});
+// canvas.addEventListener("mousemove", (event) => {
+//     drawGrid();
+// });
 
 // Storing the current drawing on the canvas as a data URL in the browser's local storage.
 window.addEventListener("unload", () => {
@@ -358,7 +358,7 @@ function createPixelArt(image, canvas, gridSize) {
             context.fillRect(x, y, gridSize, gridSize);
         }
     }
-    drawGrid();
+    // drawGrid();
 }
 
 
@@ -431,7 +431,7 @@ form.addEventListener("submit", (event) => {
     context.fillText(input, x, y);
 
     canvasDrawnOn = true;
-    drawGrid();
+    // drawGrid();
 });
 
 
