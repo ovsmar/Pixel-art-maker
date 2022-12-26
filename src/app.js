@@ -155,7 +155,7 @@ window.addEventListener("load", () => {
     }
 });
 
-
+// get background color from localStorage and convert it to rgb color for background canvas (grid)
 let hex = localStorage.getItem("bgColor");
 if (hex) {
 hex = hex.replace('#', '');
@@ -288,7 +288,7 @@ function generateRandomColor() {
     return `#${randomNumber.toString(16)}`;
 }
 
-// Draawing with random colors 
+// Drawing with random colors 
 // Flag to track whether the random color button is active
 function DrawRandomColors() {
 

@@ -130,13 +130,8 @@ body {
 }
 
 #canvas {
-
-    border: 1px solid #ccc;
-
-
     background-color: #dbf0dc;
     /* background-image: linear-gradient(to right, rgb(255 255 255 / 85%), rgb(255 255 255 / 85%)), linear-gradient(to right, #000000 50%, white 50%), linear-gradient(to bottom, #000000 50%, white 50%); */
     background-blend-mode: normal, difference, normal;
     background-size: 20px 20px;
-
 }
