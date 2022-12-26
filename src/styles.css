@@ -1,97 +1,95 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
 
 .toolbar {
-    display: flex;
-    align-items: center;
-    padding: 0.5em;
-    background-color: #eee;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  background-color: #eee;
+  justify-content: center;
+  width: 100%;
 }
 
-
 #color-picker-LN {
-    width: 3em;
-    margin-top: 0.2em;
-
-
+  width: 3em;
+  margin-top: 0.2em;
 }
 
 #submitLN {
-    margin-top: 0.5em;
-    border-radius: 0.25em;
-    background-color: #eee;
-    cursor: pointer;
-    transform: translate(-7%, -19%);
+  margin-top: 0.5em;
+  border-radius: 0.25em;
+  background-color: #eee;
+  cursor: pointer;
+  transform: translate(-7%, -19%);
 }
 
-
 #color-picker {
-    width: 3em;
-    cursor: pointer;
-    margin-left: 0.5em;
-    margin-right: 2em;
+  width: 3em;
+  cursor: pointer;
+  margin-left: 0.5em;
+  margin-right: 2em;
 }
 
 #color-BG {
-    width: 3em;
-    cursor: pointer;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+  width: 3em;
+  cursor: pointer;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 #random-color-button {
-    background: linear-gradient(to right, #bcbcbc 25%, #ffcd02 25%, #ffcd02 50%, #e84f47 50%, #e84f47 75%, #65c1ac 75%);
+  background: linear-gradient(
+    to right,
+    #bcbcbc 25%,
+    #ffcd02 25%,
+    #ffcd02 50%,
+    #e84f47 50%,
+    #e84f47 75%,
+    #65c1ac 75%
+  );
 }
 
-
 #myFileInput {
-    border: dotted;
-    cursor: pointer;
-    margin-right: 1em;
+  border: dotted;
+  cursor: pointer;
+  margin-right: 1em;
 }
 
 #quantityPixel {
-    width: 3em;
-    height: 2em;
-    border: none;
-    border-radius: 0.25em;
-
+  width: 3em;
+  height: 2em;
+  border: none;
+  border-radius: 0.25em;
 }
 
 #text-input {
-    background-color: #eee;
-    cursor: pointer;
-    border-radius: 0.25em;
-    margin-top: 0.5em;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 0.25em;
+  margin-top: 0.5em;
 }
 
 .boxBG {
-    display: flex;
-    align-items: center;
-
+  display: flex;
+  align-items: center;
 }
-
 
 #stop-draw-button,
 #draw-button,
@@ -99,26 +97,25 @@ body {
 #save-button,
 #eraser-button,
 #clear-button {
-    margin-left: 0.5em;
-    font-size: 1em;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 0.25em;
-    background-color: #eee;
-    cursor: pointer;
+  margin-left: 0.5em;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.25em;
+  background-color: #eee;
+  cursor: pointer;
 }
 
 #eraser-button {
-    background-color: red;
+  background-color: red;
 }
 
 #changeBGcolor {
-    margin-top: 0.5em;
-    border-radius: 0.25em;
-    background-color: #eee;
-    cursor: pointer;
-    transform: translate(-7%, -14%);
-
+  margin-top: 0.5em;
+  border-radius: 0.25em;
+  background-color: #eee;
+  cursor: pointer;
+  transform: translate(-7%, -14%);
 }
 
 #stop-draw-button:hover,
@@ -126,12 +123,12 @@ body {
 #random-color-button:hover,
 #save-button:hover,
 #clear-button:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 #canvas {
-    background-color: #dbf0dc;
-    /* background-image: linear-gradient(to right, rgb(255 255 255 / 85%), rgb(255 255 255 / 85%)), linear-gradient(to right, #000000 50%, white 50%), linear-gradient(to bottom, #000000 50%, white 50%); */
-    background-blend-mode: normal, difference, normal;
-    background-size: 20px 20px;
+  background-color: #dbf0dc;
+  /* background-image: linear-gradient(to right, rgb(255 255 255 / 85%), rgb(255 255 255 / 85%)), linear-gradient(to right, #000000 50%, white 50%), linear-gradient(to bottom, #000000 50%, white 50%); */
+  background-blend-mode: normal, difference, normal;
+  background-size: 20px 20px;
 }
