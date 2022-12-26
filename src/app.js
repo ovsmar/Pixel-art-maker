@@ -438,7 +438,7 @@ form.addEventListener("submit", (event) => {
 
 
 
-// move the draw , dont works well
+
 let isMoving = false;  // flag to track if the move tool is active
 let startX, startY;  // variables to store the starting x and y coordinates of the move operation
 
@@ -448,23 +448,19 @@ const moveButton = document.getElementById("move-button");  // select the move b
 moveButton.addEventListener("click", (event) => {
   // Toggle the isMoving flag
   isMoving = !isMoving;
-  if (isMoving) {
+  if (!isMoving) {
     moveButton.innerText = "Stop Moving";  // update the button text
-  } else {
+  } else if (isMoving) {
     moveButton.innerText = "Move";  // update the button text
   }
 });
 
 canvas.addEventListener("mousedown", (event) => {
-    if (context.getImageData(event.offsetX, event.offsetY, 1, 1).data[3] > 0) {  // check if the mouse is inside the drawing
-      isMoving = true;  // set the isMoving flag to true
-      startX = event.offsetX;
-      startY = event.offsetY;
-    } else {
-      isMoving = false;  // set the isMoving flag to false
-    }
-  });
+    isMoving = true
+    startX = event.offsetX;
+    startY = event.offsetY;
   
+});
 
 canvas.addEventListener("mousemove", (event) => {
   if (isMoving) {
