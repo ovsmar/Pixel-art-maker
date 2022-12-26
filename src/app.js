@@ -458,7 +458,7 @@ form.addEventListener("submit", (event) => {
 
 
 
-//! move the draw , dont work very well with 
+//! Move the draw, don't work very well
 
 // let isMoving = false;  // flag to track if the move tool is active
 // let startX, startY;  // variables to store the starting x and y coordinates of the move operation
