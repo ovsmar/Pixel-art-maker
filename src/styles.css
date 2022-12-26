@@ -86,6 +86,12 @@ body {
     margin-top: 0.5em;
 }
 
+.boxBG{
+    display: flex;
+    align-items: center;
+
+}
+
 
 #stop-draw-button,
 #draw-button,
@@ -106,6 +112,15 @@ body {
     background-color: red;
 }
 
+#changeBGcolor{
+    margin-top: 0.5em;
+    border-radius: 0.25em;
+    background-color: #eee;
+    cursor: pointer;
+    transform: translate(-7%, -14%);
+
+}
+
 #stop-draw-button:hover,
 #draw-button:hover,
 #random-color-button:hover,
@@ -120,7 +135,7 @@ body {
 
    
     background-color: #dbf0dc;
-    background-image: linear-gradient(to right, rgb(255 255 255 / 85%), rgb(255 255 255 / 85%)), linear-gradient(to right, #000000 50%, white 50%), linear-gradient(to bottom, #000000 50%, white 50%);
+    /* background-image: linear-gradient(to right, rgb(255 255 255 / 85%), rgb(255 255 255 / 85%)), linear-gradient(to right, #000000 50%, white 50%), linear-gradient(to bottom, #000000 50%, white 50%); */
     background-blend-mode: normal, difference, normal;
     background-size: 20px 20px;
 

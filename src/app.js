@@ -10,6 +10,7 @@ const drawButton = document.getElementById("draw-button");
 const stopButton = document.getElementById("stop-draw-button");
 const strPixel = document.getElementById("quantityPixel");
 let fileInput = document.getElementById("myFileInput");
+const changeBGcolor =  document.getElementById("changeBGcolor");
 let isDrawing = false;
 let isRandomColorActive = true;
 
@@ -150,8 +151,27 @@ window.addEventListener("load", () => {
     if (bgColor) {
         colorBG.value = bgColor;
         canvas.style.backgroundColor = bgColor;
+        
     }
 });
+
+
+let hex = localStorage.getItem("bgColor");
+if (hex) {
+hex = hex.replace('#', '');
+  var r = parseInt(hex.length == 3 ? hex.slice(0, 1).repeat(2) : hex.slice(0, 2), 16);
+  var g = parseInt(hex.length == 3 ? hex.slice(1, 2).repeat(2) : hex.slice(2, 4), 16);
+  var b = parseInt(hex.length == 3 ? hex.slice(2, 3).repeat(2) : hex.slice(4, 6), 16);
+  
+  canvas.style.backgroundImage = `linear-gradient(to right, rgb(${r} ${g} ${b} / 85%), rgb(${r} ${g} ${b} / 85%)), linear-gradient(to right, #000000 50%, white 50%), linear-gradient(to bottom, #000000 50%, white 50%)`;
+} else {
+    canvas.style.backgroundImage = `linear-gradient(to right, rgb(255 255 255 / 85%), rgb(255 255 255 / 85%)), linear-gradient(to right, #000000 50%, white 50%), linear-gradient(to bottom, #000000 50%, white 50%)`;
+  }
+
+  changeBGcolor.addEventListener("click", () => {
+    window.location.reload();
+});
+
 
 
 // Adds an event listener to a button element for clicks, clearing the canvas, reloading the webpage, and redrawing a grid on the canvas.
@@ -243,7 +263,7 @@ saveButton.addEventListener("click", () => {
     // Set the canvas background color with the background color from localStorage
 
     if (bgColorSAVE === null) {
-        tempContext.fillStyle = "#ffffff";
+        tempContext.fillStyle =  "transparent";
     } else {
         tempContext.fillStyle = bgColorSAVE;
     }
@@ -439,50 +459,50 @@ form.addEventListener("submit", (event) => {
 
 
 
-let isMoving = false;  // flag to track if the move tool is active
-let startX, startY;  // variables to store the starting x and y coordinates of the move operation
+// let isMoving = false;  // flag to track if the move tool is active
+// let startX, startY;  // variables to store the starting x and y coordinates of the move operation
 
-const moveButton = document.getElementById("move-button");  // select the move button
+// const moveButton = document.getElementById("move-button");  // select the move button
 
-// Add a click event listener to the move button
-moveButton.addEventListener("click", (event) => {
-  // Toggle the isMoving flag
-  isMoving = !isMoving;
-  if (!isMoving) {
-    moveButton.innerText = "Stop Moving";  // update the button text
-  } else if (isMoving) {
-    moveButton.innerText = "Move";  // update the button text
-  }
-});
+// // Add a click event listener to the move button
+// moveButton.addEventListener("click", (event) => {
+//   // Toggle the isMoving flag
+//   isMoving = !isMoving;
+//   if (!isMoving) {
+//     moveButton.innerText = "Stop Moving";  // update the button text
+//   } else if (isMoving) {
+//     moveButton.innerText = "Move";  // update the button text
+//   }
+// });
 
-canvas.addEventListener("mousedown", (event) => {
-    isMoving = true
-    startX = event.offsetX;
-    startY = event.offsetY;
+// canvas.addEventListener("mousedown", (event) => {
+//     isMoving = true
+//     startX = event.offsetX;
+//     startY = event.offsetY;
   
-});
+// });
 
-canvas.addEventListener("mousemove", (event) => {
-  if (isMoving) {
-    // Calculate the distance moved since the last mousemove event
-    const dx = event.offsetX - startX;
-    const dy = event.offsetY - startY;
-    // Draw the image data on the canvas, shifted by the distance moved
-    context.putImageData(imageData, dx, dy);
+// canvas.addEventListener("mousemove", (event) => {
+//   if (isMoving) {
+//     // Calculate the distance moved since the last mousemove event
+//     const dx = event.offsetX - startX;
+//     const dy = event.offsetY - startY;
+//     // Draw the image data on the canvas, shifted by the distance moved
+//     context.putImageData(imageData, dx, dy);
     
-  }
-});
+//   }
+// });
 
-canvas.addEventListener("mouseup", (event) => {
-    isMoving = false;
-    // Update the starting coordinates to the current mouse position
-    startX = event.offsetX;
-    startY = event.offsetY;
-    // Store the image data for future use
-    imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+// canvas.addEventListener("mouseup", (event) => {
+//     isMoving = false;
+//     // Update the starting coordinates to the current mouse position
+//     startX = event.offsetX;
+//     startY = event.offsetY;
+//     // Store the image data for future use
+//     imageData = context.getImageData(0, 0, canvas.width, canvas.height);
     
   
-});
+// });
 
 
 
