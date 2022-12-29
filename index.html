@@ -6,35 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
     <title>Pixel Art Maker</title>
 </head>
 
 <body>
     <div class="toolbar">
-        <label for="color-picker">Color:</label>
-        <input type="color" id="color-picker" value="#000" />
+        <label id="label-color-picker" for="color-picker" title="Change color"><i class="fa-solid fa-pen"></i></label>
+        <input type="color" id="color-picker" value="#000" style="display: none;" />
         <div class="boxBG">
-            <label for="color-BG">BG Color:</label>
+            <label for="color-BG"></label>
             <input type="color" id="color-BG" value="#ffffff" />
-            <button id="changeBGcolor">Change</button>
+            <button id="changeBGcolor" title="Change backgound color"><i class="fa-solid fa-fill-drip"></i></button>
         </div>
-        <button id="clear-button">Clear</button>
-        <button id="eraser-button">Eraser</button>
+        <button id="clear-button" title="Clear the canvas"><i class="fa-solid fa-broom"></i></button>
+        <button id="eraser-button" title="Eraser"><i class="fa-solid fa-eraser"></i></button>
         <!-- <button id="move-button">Move</button> -->
-        <button id="save-button">Save</button>
-        <button id="random-color-button">Draw with random colors</button>
-        <button id="draw-button">Auto drawing ➔</button>
-        <label for="quantityPixel">Pixels:</label>
-        <input type="number" id="quantityPixel" name="quantityPixel" min="1" max="1000" />
-        <button id="stop-draw-button">Stop auto drawing</button>
+        <button id="save-button" title="Save as PNG"><i class="fas fa-download"></i></button>
+        <button id="random-color-button" title="Random color"><i class="fa-solid fa-palette"></i></button>
+        <div class="boxAutoDraw">
+            <button id="draw-button" title="Auto draw"><i class="fa-solid fa-shuffle"></i></button>
+            <label for="quantityPixel">Pixels:</label>
+            <input type="number" id="quantityPixel" name="quantityPixel" min="1" max="1000" />
+            <button id="stop-draw-button" title="Stop auto draw"><i class="fa-regular fa-circle-stop"></i></button>
+        </div>
         <input type="file" id="myFileInput" style="display: none" />
-        <label id="myFileInput" for="myFileInput">Pixel art from an image</label>
-
-        <form id="pixel-art-form">
-            <input type="text" id="text-input" placeholder="Letters/numbers to pixel:">
-            <input type="color" id="color-picker-LN" value="#000" />
-            <button id="submitLN" type="submit">Draw</button>
-        </form>
+        <label id="myFileInput" title="Pixel art from an image" for="myFileInput">Pixel art from an image</label>
+        <div class="boxLN">
+            <form id="pixel-art-form">
+                <input type="text" id="text-input" placeholder="Letters/numbers to pixel:">
+                <input type="color" id="color-picker-LN" value="#000" />
+                <button id="submitLN" type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
+            </form>
+        </div>
         <!-- <button id="toggle-grid-button">Turn on/off grid</button> -->
     </div>
     <canvas id="canvas"></canvas>

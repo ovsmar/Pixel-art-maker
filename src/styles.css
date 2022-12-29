@@ -29,7 +29,8 @@ body {
 
 #color-picker-LN {
   width: 3em;
-  margin-top: 0.2em;
+  transform: translate(2%, 11%);
+  /* margin-top: 0.2em; */
 }
 
 #submitLN {
@@ -37,14 +38,14 @@ body {
   border-radius: 0.25em;
   background-color: #eee;
   cursor: pointer;
-  transform: translate(-7%, -19%);
+  /* transform: translate(-7%, -19%); */
 }
 
 #color-picker {
   width: 3em;
   cursor: pointer;
-  margin-left: 0.5em;
-  margin-right: 2em;
+  /* margin-left: 0.5em;
+  margin-right: 2em; */
 }
 
 #color-BG {
@@ -55,21 +56,28 @@ body {
 }
 
 #random-color-button {
-  background: linear-gradient(
-    to right,
-    #bcbcbc 25%,
-    #ffcd02 25%,
-    #ffcd02 50%,
-    #e84f47 50%,
-    #e84f47 75%,
-    #65c1ac 75%
-  );
+  background: linear-gradient(to right,
+      #bcbcbc 25%,
+      #ffcd02 25%,
+      #ffcd02 50%,
+      #e84f47 50%,
+      #e84f47 75%,
+      #65c1ac 75%);
 }
+
+#draw-button {
+  background-image: url("../assets/8hAI6.png");
+  background-blend-mode: normal, difference, normal;
+  background-size: cover;
+}
+
 
 #myFileInput {
   border: dotted;
   cursor: pointer;
-  margin-right: 1em;
+  margin-right: 0.5em;
+
+  margin-left: 0.5em;
 }
 
 #quantityPixel {
@@ -80,18 +88,48 @@ body {
 }
 
 #text-input {
+  cursor: pointer;
+  height: 2em;
+  border: none;
+  border-radius: 0.25em;
+
+  font-size: 1em;
+
+  cursor: pointer;
+}
+
+.boxLN {
+  margin-left: 0.5em;
+  font-size: 1em;
   background-color: #eee;
   cursor: pointer;
-  border-radius: 0.25em;
-  margin-top: 0.5em;
 }
 
 .boxBG {
   display: flex;
   align-items: center;
+  background-color: #ddd5d5;
+  border-radius: 0.25em;
 }
 
-#stop-draw-button,
+.boxAutoDraw {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: #ddd5d5;
+  border-radius: 0.25em;
+}
+
+#submitLN {
+  font-size: 1em;
+  border-radius: 0.25em;
+  background-color: #eee;
+  cursor: pointer;
+  border: none;
+  transform: translate(-5%, 6%);
+
+}
+
+#label-color-picker,
 #draw-button,
 #random-color-button,
 #save-button,
@@ -106,6 +144,17 @@ body {
   cursor: pointer;
 }
 
+#changeBGcolor,
+#stop-draw-button {
+
+  font-size: 1em;
+
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  background-color: #ddd5d5;
+}
+
 #eraser-button {
   background-color: red;
 }
@@ -113,12 +162,14 @@ body {
 #changeBGcolor {
   margin-top: 0.5em;
   border-radius: 0.25em;
-  background-color: #eee;
+
   cursor: pointer;
   transform: translate(-7%, -14%);
 }
 
-#stop-draw-button:hover,
+#label-color-picker:hover,
+#submitLN:hover,
+/* #stop-draw-button:hover, */
 #draw-button:hover,
 #random-color-button:hover,
 #save-button:hover,

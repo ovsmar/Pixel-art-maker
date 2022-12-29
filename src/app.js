@@ -138,6 +138,13 @@ colorPicker.addEventListener("input", (event) => {
 });
 
 
+let pen = document.querySelector("i.fa-pen")
+  setInterval(()=>{
+      let pencolor = colorPicker.value;
+      pen.style.color = pencolor;
+  }, 100);
+  
+
 // Adds an event listener to a color picker element for value changes, allowing the user to change the background color of a canvas and storing the selected color in the browser's local storage.
 colorBG.addEventListener("input", (event) => {
     canvas.style.backgroundColor = event.target.value;
